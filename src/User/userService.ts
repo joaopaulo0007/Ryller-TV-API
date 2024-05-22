@@ -1,11 +1,11 @@
-import { UserModel } from "models/User";
+import { UserModel } from "../models/User";
 
 
 export const getUsers = () => UserModel.find();
 
 export const getUserByEmail = (email: string) => UserModel.findOne({email});
 
-export const getUserById = (id: string) => UserModel.findById(id); 
+export const getUserById = (id: Number) => UserModel.findById(id); 
 
 export const createUser = (values: Record<string, any>) => new UserModel(values).save().then((user) => user.toObject);
 
