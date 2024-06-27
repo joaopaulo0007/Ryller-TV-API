@@ -10,7 +10,7 @@ import mongoose from 'mongoose';
 
 import router from '../src/User/user.routes'; 
 
-
+import RouterTimes from '../src/football/times/routes'
 const app = express(); 
 
 app.use(cors({
@@ -22,6 +22,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.use(router); 
+app.use(RouterTimes)
 
 
 const server = http.createServer(app); 
