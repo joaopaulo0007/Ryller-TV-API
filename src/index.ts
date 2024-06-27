@@ -8,7 +8,8 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose'; 
 
-import router from '../src/User/user.routes'; 
+import userRoutes from '../src/User/user.routes'
+import fixturesRoutes from '../src/api-football/Fixture/fixture.routes'
 
 
 const app = express(); 
@@ -21,7 +22,8 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-app.use(router); 
+app.use(userRoutes); 
+app.use(fixturesRoutes); 
 
 
 const server = http.createServer(app); 
