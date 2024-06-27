@@ -42,7 +42,7 @@ async function insert(times: Array<{ team: any, venue: any }>) {
 async function insertTimeStatistics(statistics: Statistics) {
     try {
       const existingStatistic = await StatisticsModel.findOne({
-        teamId: statistics.teamID,
+        teamId: statistics.teamId,
         season: statistics.season,
         league:statistics.league,
         
@@ -51,12 +51,12 @@ async function insertTimeStatistics(statistics: Statistics) {
       if (!existingStatistic) {
         const newStatistic = new StatisticsModel(statistics);
         await newStatistic.save();
-        console.log(`Estatísticas para o time ${statistics.teamID} no ano ${statistics.season} salvas com sucesso.`);
+        console.log(`Estatísticas para o time ${statistics.teamId} no ano ${statistics.season} salvas com sucesso.`);
       } else {
-        console.log(`Estatísticas para o time ${statistics.teamID} no ano ${statistics.season} já existem no banco de dados.`);
+        console.log(`Estatísticas para o time ${statistics.teamId} no ano ${statistics.season} já existem no banco de dados.`);
       }
     } catch (error) {
-      console.error(`Erro ao salvar as estatísticas para o time ${statistics.teamID} no ano ${statistics.season}:`, error);
+      console.error(`Erro ao salvar as estatísticas para o time ${statistics.teamId} no ano ${statistics.season}:`, error);
     }
   }
   

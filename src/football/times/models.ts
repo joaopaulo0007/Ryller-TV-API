@@ -104,7 +104,7 @@ interface Cards {
 }
 
 interface Statistics {
-  teamID:string,
+  teamId:string,
   league:string,
   season:string,
   form: string;
@@ -262,7 +262,7 @@ const minuteStatsSchema = new Schema({
   
   const statisticsSchema = new Schema({
     teamId: { type: String, required: true },
-    year: { type: String, required: true },
+    season: { type: String, required: true },
     league:{type:String,required:true},
     form: { type: String, required: true },
     fixtures: fixturesSchema,
